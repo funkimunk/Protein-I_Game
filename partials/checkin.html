@@ -23,7 +23,7 @@
            
             <div class="widget" >
                 
-                <div class="widget-title"  style="font-size: 18pt;"> <i class="fa fa-calendar-check-o"></i>Question {{questionNumber + 1}}</div>
+                <div class="widget-title"  style="font-size: 14pt; "> <i class="fa fa-calendar-check-o"></i>Question {{questionNumber + 1}}</div>
                         
                 <div class="widget-body xlarge">
                     <form role="form" class=" form-horizontal ng-pristine ng-valid">
@@ -33,58 +33,64 @@
                             
                             <div class="col-sm-12 center" style="text-align:center;">
                                 <h3>{{qData.Text}}</h3>
-                                <br />
                             </div>
                         
 
-                         <!--   <div class="col-sm-12" >
+                            <div class="col-xs-12" >
 
-                                <div class="col-sm-5" ></div>
-                                <div class="col-sm-2" >
+                                <div class="col-xs-4" ></div>
+                                <div class="col-xs-4" >
                                 
-                                    <img style="width:100%;" ng-src='{{qData.heroImg}}' />
-                                    <br /><br />
+                                    <img style="width:16vw;margin-left: auto;margin-right: auto;display: block;" ng-src='{{qData.heroImg}}' />
+                                    <br /> 
                                 </div>
                                 
-                                <div class="col-sm-5" ></div>
-                            </div>-->
+                                <div class="col-xs-4" ></div>
+                            </div>
 
 
                             <div class="col-sm-12 "ng-if="qData.answersText.length > 0">
-                                <button  style="font-size: 14pt;"  type="text" placeholder="Forename" class="form-control" ng-click='selectAnswer(0)''>{{qData.answersText[0]}}</button>
+                                <button  style="font-size: 13pt; margin-bottom:-10px;"  type="text" placeholder="Forename" class="form-control" ng-click='selectAnswer(0)''>{{qData.answersText[0]}}</button>
                                 <br />
                             </div>
 
                             <div class="col-sm-12 " ng-if="qData.answersText.length > 1">
-                                <button  style="font-size: 14pt;"  type="text" placeholder="Forename" class="form-control" ng-click='selectAnswer(1)'>{{qData.answersText[1]}}</button>
+                                <button  style="font-size: 13pt; margin-bottom:-10px;"  type="text" placeholder="Forename" class="form-control" ng-click='selectAnswer(1)'>{{qData.answersText[1]}}</button>
                                 <br />
                             </div>
 
                             <div class="col-sm-12 "  ng-if="qData.answersText.length > 2">
-                                <button  style="font-size: 14pt;"  type="text" placeholder="Forename" class="form-control" ng-click='selectAnswer(2)'>{{qData.answersText[2]}} </button>
+                                <button  style="font-size: 13pt; margin-bottom:-10px;"  type="text" placeholder="Forename" class="form-control" ng-click='selectAnswer(2)'>{{qData.answersText[2]}} </button>
                                 <br />
                             </div> 
                             
                             <div class="col-sm-12 " ng-if="qData.answersText.length > 3">
-                                <button  style="font-size: 14pt;"  type="text" placeholder="Forename" class="form-control" ng-click='selectAnswer(3)'>{{qData.answersText[3]}}</button>
+                                <button  style="font-size: 13pt; margin-bottom:-10px;"  type="text" placeholder="Forename" class="form-control" ng-click='selectAnswer(3)'>{{qData.answersText[3]}}</button>
                                 <br />
                             </div>
 
                             <div class="col-sm-12 " ng-if="qData.answersText.length > 4">
-                                <button  style="font-size: 14pt;"  type="text" placeholder="Forename" class="form-control" ng-click='selectAnswer(4)'>{{qData.answersText[4]}}</button>
+                                <button  style="font-size: 13pt; margin-bottom:-10px;"  type="text" placeholder="Forename" class="form-control" ng-click='selectAnswer(4)'>{{qData.answersText[4]}}</button>
                                 <br />
                             </div>
 
                             <div class="col-sm-12 " style="text-align: center;"   >
                                 <span ng-if="feedback">{{feedbackMessage}}</span>
                                 <span ng-if="!feedback">Please select an answer from the above options</span>
-                                <br /><br/>
+                                <br />
                             </div>
 
                             <div class="col-sm-12 ">
                      
+                                <div class="meter animate">
+                                    <span id="meterID" ng-style="widthBar"><span></span></span>
+                                </div>
+                            </div>
 
+                            <div class="col-sm-12 ">
+                     
                                 <div class="col-sm-8" >
+
                                      <span>Question: {{questionNumber + 1}}/{{questionCount}}</span><span>, {{score}} correct so far</span>.
 
                                 </div>

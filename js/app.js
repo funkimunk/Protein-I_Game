@@ -106,7 +106,7 @@ Questions =
     },{
         "type": 1,    
         "Text": "How much protein is in 400g can of chickpeas?",        
-        "heroImg": "",
+        "heroImg": "02.jpg",
         "answersText": 
             [
                 "19 grams", 
@@ -268,26 +268,6 @@ Questions =
             ],
         "answersCorrectness": 
             [
-                true,
-                false,
-                false, 
-                false,
-                false, 
-            ],    
-    },{
-        "type": 3,    
-        "Text": "Can you name the following commonly consumed plant protein?",        
-        "heroImg": "",
-        "answersText": 
-            [
-                "Lentils", 
-                "Tofu",
-                "Edamame ",
-                "Peanuts",
-                "Chickpeas"
-            ],
-        "answersCorrectness": 
-            [
                 
                 false,
                 true,
@@ -311,8 +291,28 @@ Questions =
             [
              
                 false,
+                false, 
+                false,
                 false,    
                 true,
+            ],    
+    },{
+        "type": 3,    
+        "Text": "Can you name the following commonly consumed plant protein?",        
+        "heroImg": "",
+        "answersText": 
+            [
+                "Lentils", 
+                "Tofu",
+                "Edamame ",
+                "Peanuts",
+                "Chickpeas"
+            ],
+        "answersCorrectness": 
+            [
+                true,
+                false,
+                false, 
                 false,
                 false, 
             ],    
@@ -353,10 +353,10 @@ Questions =
             [
              
                 false,
-                false, 
-                false,
                 false,    
                 true,
+                false,
+                false, 
             ],    
     },{
         "type": 3,    

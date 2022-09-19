@@ -42,9 +42,18 @@ app.controller('CheckinController', function($scope,$rootScope, InfoService,$sce
             $scope.questionNumber = iQuestion;
             $scope.qData = Questions[iQuestion];
             $scope.viewMode = $scope.qData.type;
+            $scope.qData.heroImg = "./img/"+iQuestion+".jpg";
+            setProgressBar();
         }
 
         
+        function setProgressBar(){
+            
+            widthPer = ($scope.questionNumber + 1) * 6.666666;
+
+            $scope.widthBar={"width": widthPer+"%"};
+              
+        }
 
         function getCorrectAnswer(){
 
