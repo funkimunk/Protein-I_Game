@@ -24,8 +24,11 @@ app.controller('CheckinController', function($scope,$rootScope, InfoService,$sce
 
         initQuiz();
 
+        
+        
         function initQuiz(){
             initQuestion();
+            clearAnswers();
             setQuestion(0); 
         }
 
@@ -43,6 +46,7 @@ app.controller('CheckinController', function($scope,$rootScope, InfoService,$sce
             $scope.qData = Questions[iQuestion];
             $scope.viewMode = $scope.qData.type;
             $scope.qData.heroImg = "./img/"+iQuestion+".jpg";
+            clearAnswers()
             setProgressBar();
         }
 
@@ -64,12 +68,50 @@ app.controller('CheckinController', function($scope,$rootScope, InfoService,$sce
 
                     retStr = $scope.qData.answersText[i];
 
+                    
+                    $scope.buttonStyle[i] =  { 
+                        "font-size": "13pt",
+                        "margin-bottom":"-10px",
+                        "background-color" : "#9CCC65",
+                        "color": "#000"
+                    }
+                    
+
+                }else{
+                    $scope.buttonStyle[i] =  { 
+                        "font-size": "13pt",
+                        "margin-bottom":"-10px",
+                        "background-color" : "#FF6E40",
+                        "color": "#000"
+                    }
                 }
             }
 
             return retStr;
         }
 
+      
+        function clearAnswers(){
+            $scope.buttonStyle = [
+                { 
+                    "font-size": "13pt",
+                    "margin-bottom":"-10px"
+                },
+                { 
+                    "font-size": "13pt",
+                    "margin-bottom":"-10px", 
+                },
+                { 
+                    "font-size": "13pt",
+                    "margin-bottom":"-10px"
+                },{ 
+                    "font-size": "13pt",
+                    "margin-bottom":"-10px"
+                },{ 
+                    "font-size": "13pt",
+                    "margin-bottom":"-10px"
+                }];
+        }
         $scope.selectAnswer = function (iSelect){
 
             if($scope.feedback == false){
@@ -78,12 +120,16 @@ app.controller('CheckinController', function($scope,$rootScope, InfoService,$sce
 
                     $scope.feedbackMessage = "Congratulations, you answered Question " + ($scope.questionNumber  + 1) + " correctly!";
                     $scope.score = $scope.score + 1;
+                    $scope.qData.heroImg = "./img/welldone.png";
+                    getCorrectAnswer();
                     
                 }else{
 
                     $scope.feedbackMessage = "Sadly, you answered question " + ($scope.questionNumber  + 1) + " incorrectly. The correct answer is " + getCorrectAnswer();
+                    $scope.qData.heroImg = "./img/oops.png";
                 }
                 
+
                 $scope.feedback = true;
                 
             } else{
